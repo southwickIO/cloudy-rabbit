@@ -2,10 +2,10 @@
 
 
 
-###############################################################################
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
 # NAME: fc.py                                                                 #
 #                                                                             #
-# VERSION: 20230320                                                           #
+# VERSION: 20230321                                                           #
 #                                                                             #
 # SYNOPSIS: Fetch HTML comments from a user specified site.                   # 
 #                                                                             #
@@ -30,7 +30,7 @@
 #             fitness, application, et cetera, for any particular purpose,    #
 #             use case, or application of this script.                        #
 #                                                                             #
-###############################################################################
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
 
 
 

@@ -1,21 +1,27 @@
 # Cloudy Rabbit
-> v. 20230320
+> v. 20230321
 
 > author: southwickio
 
 <br>
 
 ## Overview
-Fetch HTML comments from a user specified site. 
+Simple reconnaissance and threat hunting toolbox.
 
 ## Description
-This script fetches all HTML comments from a site specified by the user and outputs to STDOUT and ./comments.txt. This can be used from a cybersecurity standpoint as a way to look for any developer code that made it to production that shouldn't have.
+This collection of scripts was written with the intent to gather data for cybersecurity, threat hunting use cases.
 
 ## Dependencies
 1. Python (>=3.10.6)
+2. *nix machine
+
+## Scripts
+
+ 1. **Fetch Comments** (fc.py) - This script fetches all HTML comments from a site specified by the user and outputs to STDOUT and ./comments.txt. This can be used from a cybersecurity standpoint as a way to look for any developer code that made it to production that shouldn't have; such as passwords, keys, or other proprietary information.
+ 2. **Get Logs** (gl.sh) - This script outputs all `.log` files on a *nix machine. Potential cybersecurity use cases include tracking down a specific log, what applications are running on the machine, and modification dates for DFIR. Run as sudo for different results.
 
 ## Installation and Runtime
 1. `git clone github.com/southwickIO/cloudy-rabbit`
 2. `cd cloudy-rabbit/`
-3. `chmod u+x fc.py`
-4. `./fc.py`
+3. `chmod -R u+x cloudy-rabbit/`
+4. Run any script with the prefix `./`. For example: `./fc.py` or `./gl.sh`
