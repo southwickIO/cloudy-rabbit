@@ -9,7 +9,6 @@
 #                                                                             #
 # SYNOPSIS: Fetch .log files from a *nix machine                              # 
 #                                                                             #
-#                                                                             #
 # DESCRIPTION: This script outputs all `.log` files on a *nix machine.        #
 #              Potential cybersecurity use cases include tracking down a      #
 #              specific log, what applications are running on the machine,    #
