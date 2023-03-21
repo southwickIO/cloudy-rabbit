@@ -53,6 +53,8 @@ import shutil
 #set constants
 TARGETDIR = os.path.join(os.path.dirname(__file__), "..", "res", "output")
 
+if not os.path.exists(TARGETDIR):
+    os.makedirs(TARGETDIR)
 
 
 #delete the target files if they exists
