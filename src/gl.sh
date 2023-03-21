@@ -7,7 +7,7 @@
 #                                                                             #
 # VERSION: 20230321                                                           #
 #                                                                             #
-# SYNOPSIS: Fetch .log files from an *nix machine                             # 
+# SYNOPSIS: Fetch .log files from a *nix machine                              # 
 #                                                                             #
 #                                                                             #
 # DESCRIPTION: This script outputs all `.log` files on a *nix machine.        #
