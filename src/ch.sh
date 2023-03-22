@@ -18,8 +18,7 @@
 # OUTPUT: 1.) STDOUT                                                          #
 #         2.) ../res/output/hostcommand.csv"                                  #
 #                                                                             #
-# PRE-RUNTIME NOTES: 1.) This script has a 5 second delay between each        #
-#                        iteration                                            #
+# PRE-RUNTIME NOTES: 1.) None                                                 #
 #                                                                             #
 # AUTHORS: @southwickio                                                       #
 #                                                                             #
