@@ -36,6 +36,30 @@
 
 
 
+#define constants
+TARGETDIR="../res/output"
+TARGETFILE="logs.csv"
+
+
+
+# Create output directory if it doesn't exist
+if [ ! -d "$TARGETDIR" ]; then
+
+  mkdir -p "$TARGETDIR"
+
+fi
+
+
+
+# Delete output file if it exists
+if [ -f "$TARGETDIR/$TARGETFILE" ]; then
+
+  rm "$TARGETDIR/$TARGETFILE"
+
+fi
+
+
+
 read -p "Do you want to output to a CSV file? (Y/N): " answer
 
 
@@ -45,8 +69,8 @@ if [ "$answer" == "Y" ] || [ "$answer" == "y" ]
 
 
 then
-  find / -type f -iname "*.log" -printf "%TY-%Tm-%Td %TH:%TM,%p\n" > logs.csv 2>/dev/null
-  echo "Output saved to logs.csv"
+  find / -type f -iname "*.log" -printf "%TY-%Tm-%Td %TH:%TM,%p\n" > "$TARGETDIR/$TARGETFILE" 2>/dev/null
+  echo "Output saved to ../res/output/logs.csv"
 
 
 

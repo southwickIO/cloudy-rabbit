@@ -36,6 +36,22 @@
 #import dependencies
 import requests
 from bs4 import BeautifulSoup, Comment
+import os
+
+
+
+#set constants
+TARGETDIR = os.path.join(os.path.dirname(__file__), "..", "res", "output")
+
+if not os.path.exists(TARGETDIR):
+    os.makedirs(TARGETDIR)
+
+
+
+#delete the target files if they exists
+if os.path.exists(f"{TARGETDIR}/comments.txt"):
+
+    os.remove(f"{TARGETDIR}/comments.txt")
 
 
 
@@ -43,7 +59,7 @@ from bs4 import BeautifulSoup, Comment
 while True:
 
     #get website URL
-    url = input("Enter the website URL: ")
+    url = input("Enter the website URL (include http://): ")
 
     #url condition check
     if "http://" in url:
@@ -65,7 +81,7 @@ while True:
 
 
             #output results to STDOUT and ./comments.txt
-            with open("comments.txt", 'w') as f:
+            with open(f"{TARGETDIR}/comments.txt", 'w') as f:
 
                 #STDOUT headline
                 print(f"\n{str.upper(url)} SOURCE COMMENTS")

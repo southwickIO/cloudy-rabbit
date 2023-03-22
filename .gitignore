@@ -1,2 +1,5 @@
+/res/output/comments.txt
+/res/output/logs.csv
 /res/output/sample.pcap
 /res/output/ipids.txt
+/res/output/hostcommand.csv

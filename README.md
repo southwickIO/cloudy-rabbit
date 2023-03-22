@@ -13,7 +13,7 @@ This collection of standalone scripts was written with the intent to gather data
 
 ## Dependencies
 1. Python (>=3.10.6)
-2. \*nix machine
+2. Ubuntu (>=20.04) or relevant distro.
 3. scapy (`sudo pip3 install scapy`). Used for tipid.py and must be installed as sudo for tipid.py to work.
 
 ## Scripts
@@ -21,6 +21,7 @@ This collection of standalone scripts was written with the intent to gather data
  1. **Fetch Comments** (fc.py) - This script fetches all HTML comments from a site specified by the user and outputs to STDOUT and ./comments.txt. This can be used from a cybersecurity standpoint as a way to look for any developer comments that made it to production that shouldn't have; such as passwords, keys, or other proprietary information.
  2. **Get Logs** (gl.sh) - This script outputs all `.log` files on a \*nix machine. Potential cybersecurity use cases include tracking down a specific log, what applications are running on the machine, and modification dates for DFIR. Run as sudo for different results.
  3. **Track IP-IDs** (tipid.py) - Must be run as sudo. Analyze the IP-IDs of an IP address to determine order of IDs. Different patterns can help determine exploits or corroborate any idle network scan (with a zombie) that only scans for sequential IP-IDs. This was based on the paper *A closer look at IP-ID behavior in the Wild* by Flavia Salutari, Danilo Cicalese, and Dario J. Rossi.
+ 4. **Count Host Command** (ch.sh) - Must be run as sudo. Runs the host command N times and counts unique occurences across different geographical regions. This can assist an analyst in finding anomalous data and help further map an external network.   
 
 ## Installation and Runtime
 ##### Note: There is no error handling for any script
@@ -31,3 +32,4 @@ This collection of standalone scripts was written with the intent to gather data
 
 ## Todo
 - [ ] Add error handling to scripts
+- [x] Add an output folder check to scripts
