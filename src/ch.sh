@@ -3,9 +3,9 @@
 
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
-# NAME: gl.sh                                                                 #
+# NAME: ch.sh                                                                 #
 #                                                                             #
-# VERSION: 20230321                                                           #
+# VERSION: 20230322                                                           #
 #                                                                             #
 # SYNOPSIS: Host command iteration for further analysis                       # 
 #                                                                             #
