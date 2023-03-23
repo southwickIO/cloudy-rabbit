@@ -1,5 +1,5 @@
 # Cloudy Rabbit
-> v. 20230321
+> v. 20230322
 
 > author: southwickio
 
@@ -9,7 +9,7 @@
 Simple reconnaissance and threat hunting toolbox.
 
 ## Description
-This collection of standalone scripts was written with the intent to gather data for some specific cybersecurity and threat hunting use cases. These scripts are quick 'n' dirty and cover some standalone tasks I wasn't able to find in the wild. This repo is a toolbox that covers diverse areas of reconnaissance and is continuously under development as new scripts are added.
+This collection of standalone scripts was written with the intent to gather data for some specific cybersecurity and threat hunting use cases. These scripts are quick 'n' dirty and cover some standalone tasks I wasn't able to find in the wild or wanted to create my own. This repo is a toolbox that covers diverse areas of reconnaissance and is continuously under development as new scripts are added.
 
 ## Dependencies
 1. Python (>=3.10.6)
@@ -31,5 +31,21 @@ This collection of standalone scripts was written with the intent to gather data
 4. Run any script with the prefix `./`. For example: `./fc.py` or `./gl.sh`
 
 ## Todo
+- [ ] create a menu (main.py) for the application
+- [ ] create a script (nmap ip-options) or scapy that detects source routing
+- [ ] create a script that tells if packets are being fragmented or not. Fragmentation is a way to potentially bypass IDS.
+- [ ] Banner grabber using the same dns switing mechanisn from ch.sh
+- [ ] script that detect iis lockdown tool, apache mod headers, and apache2.conf serversignature/server token settings. This could detect false or off banners
+- [ ] simple proxy creator script
+- [ ] http tunelling detection script. See ../res/Detecting HTTP tunneling.
+- [ ] detect outbound ssh traffic script
+- [ ] simple custom vpn script
+- [ ] IP spoofing detection script. See ../res/detecting ip spoofing and ../res/
+- [ ] bogon detection script
+- [ ] routing tables enumeration script
+- [ ] port 53, 445, 161-162, 389, 135, 137-139 enumeration script. make it quiet.
+- [ ] sysinternals wrapper and menu (?exploratory; might be its own project)
+- [ ] sysinternals detector script
+
 - [ ] Add error handling to scripts
 - [x] Add an output folder check to scripts

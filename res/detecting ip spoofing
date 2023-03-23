@@ -1,0 +1,19 @@
+    • detecting ip spoofing:
+        ◦ compare ttl of packets of valid conversations with suspect packets 
+            ▪ (must be routed packets and path must be symmetrical)
+        ◦ ip-id check
+            ▪ send packet to source of suspect packet
+            ▪ response ipid in response should be near, and greater than, the suspect packet
+        ◦ tcp flow control
+            ▪ attacker cannot see syn/ack and adjust data size based on window size
+            ▪ advertize a window of 0 in Syn/ACK and if the sender sends data back, after you advertized against it, its a good chance that is a spoofed ip
+
+    • protecting against spoofing:
+        ◦ filter icmp
+        ◦ use random initial sequence numbers
+        ◦ block bogons
+            ▪ A bogon is a term used to refer to an IP address or network that is invalid, non-routable, or otherwise not recognized by the internet routing system.
+        ◦ do not base authentication on ip
+        ◦ reduce initial ttls
+        ◦ acl filter inbound traffic from subnets
+        ◦ acl egress filter traffic from your network destined for your network
