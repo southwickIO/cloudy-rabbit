@@ -1,5 +1,5 @@
 # Cloudy Rabbit
-> v. 20230322
+> v. 20230326
 
 > author: southwickio
 
@@ -46,6 +46,7 @@ This collection of standalone scripts was written with the intent to gather data
 - [ ] port 53, 445, 161-162, 389, 135, 137-139 enumeration script. make it quiet.
 - [ ] sysinternals wrapper and menu (?exploratory; might be its own project)
 - [ ] sysinternals detector script
+- [ ] System Call Table explorer/detector for linux
 
 - [ ] Add error handling to scripts
 - [x] Add an output folder check to scripts
