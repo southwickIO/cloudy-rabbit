@@ -47,6 +47,7 @@ This collection of standalone scripts was written with the intent to gather data
 - [ ] sysinternals wrapper and menu (?exploratory; might be its own project)
 - [ ] sysinternals detector script
 - [ ] System Call Table explorer/detector for linux
+- [ ] File metadata explorer
 
 - [ ] Add error handling to scripts
 - [x] Add an output folder check to scripts
