@@ -1,5 +1,5 @@
 # Cloudy Rabbit
-> v. 20230327
+> v. 20230330
 
 > author: southwickio
 
@@ -49,6 +49,8 @@ This collection of standalone scripts was written with the intent to gather data
 - [ ] System Call Table explorer/detector for linux
 - [ ] File metadata explorer
 - [ ] Hidden Form Items Finder for websites 
+- [ ] tunnel check script: ack tunneling, icmp tunneling, ssh tunneling
+- [ ] source routing check
 
 - [ ] Add error handling to scripts
 - [x] Add an output folder check to scripts
