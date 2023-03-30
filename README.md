@@ -40,7 +40,7 @@ This collection of standalone scripts was written with the intent to gather data
 - [ ] http tunelling detection script. See ../res/Detecting HTTP tunneling.
 - [ ] detect outbound ssh traffic script
 - [ ] simple custom vpn script
-- [ ] IP spoofing detection script. See ../res/detecting ip spoofing and ../res/
+- [ ] IP spoofing detection script. See ../res/detecting ip spoofing and the other one
 - [ ] bogon detection script
 - [ ] routing tables enumeration script
 - [ ] port 53, 445, 161-162, 389, 135, 137-139 enumeration script. make it quiet.
