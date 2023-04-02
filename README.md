@@ -12,7 +12,7 @@ Simple reconnaissance and threat hunting toolbox.
 This collection of standalone scripts was written with the intent to gather data for some specific cybersecurity and threat hunting use cases. These scripts are quick 'n' dirty and cover some standalone tasks I wasn't able to find in the wild or wanted to create my own. This repo is a toolbox that covers diverse areas of reconnaissance and is continuously under development as new scripts are added.
 
 ## Dependencies
-1. Python (>=3.10.6)
+1. Python (>=3.8)
 2. Ubuntu (>=20.04) or relevant distro.
 3. scapy (`sudo pip3 install scapy`). Used for tipid.py and must be installed as sudo for tipid.py to work.
 
