@@ -9,7 +9,7 @@
 #                                                                             #
 # SYNOPSIS: Track IP-IDs for patterns and exploit analysis                    #
 #                                                                             #
-# DESCRIPTION: Analyze the IP-IDs of an IP address to determine order of IDs. # 
+# DESCRIPTION: Analyze the IP-IDs of an IP address to determine order of IDs. #
 # Different patterns can help determine exploits or corroborate any idle      #
 # network scan that only scans for sequential IP-IDs. This was based on the   #
 # paper *A closer look at IP-ID behavior in the Wild* by Flavia Salutari,     #
@@ -24,7 +24,7 @@
 # PRE-RUNTIME NOTES: 1.) You will need to open another terminal and ping your #
 #                        target when prompted.                                #
 #                    2.) At the time of writing, 68.173.202.37, was an        #
-#                        example of sequential incremental IP-IDs. I do not   # 
+#                        example of sequential incremental IP-IDs. I do not   #
 #                        own this IP address. Ping at your own risk.          #
 #                    3.) The dir tree needs to be kept intact for this script #
 #                        to work correctly. Otherwise you will need to set    #
