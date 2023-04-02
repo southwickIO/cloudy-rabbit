@@ -3,24 +3,24 @@
 
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
-# NAME: main.py	   															                              #
-#	 																		                                        #
-# VERSION: 20230402	   														                            #
-#	 																	                                          #
-# SYNOPSIS: Main menu for the cloudy-rabbit application	                      #
-#	                                                                            #
+# NAME: main.py                                                               #
+#                                                                             #
+# VERSION: 20230402                                                           #
+#                                                                             #
+# SYNOPSIS: Main menu for the cloudy-rabbit application                       #
+#                                                                             #
 # DESCRIPTION: Help youself navigate the application with this simple menu.   #
-#	                                                                            #
-# INPUT: 1.) Runtime user input	                                              #
-#	                                                                            #
-# OUTPUT: 1.) STDOUT	                                                        #
-#	                                                                            #
-# PRE-RUNTIME NOTES: 1.) Must be run as sudo to properly work	                #
-#	                                                                            #
-# AUTHORS: @southwickio	                                                      #
-#	                                                                            #
-# LICENSE: GPLv3	                                                            #
-#	                                                                            #
+#                                                                             #
+# INPUT: 1.) Runtime user input                                               #
+#                                                                             #
+# OUTPUT: 1.) STDOUT                                                          #
+#                                                                             #
+# PRE-RUNTIME NOTES: 1.) Must be run as sudo to properly work                 #
+#                                                                             #
+# AUTHORS: @southwickio                                                       #
+#                                                                             #
+# LICENSE: GPLv3                                                              #
+#                                                                             #
 # DISCLAIMER: All work produced by Authors is provided “AS IS”. Authors make  #
 #             no warranties, express or implied, and hereby disclaims any and #
 #             all warranties, including, but not limited to, any warranty of  #
