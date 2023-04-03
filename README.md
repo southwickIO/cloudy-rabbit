@@ -17,7 +17,6 @@ This collection of standalone scripts was written with the intent to gather data
 3. scapy (`sudo pip3 install scapy`). Used for tipid.py and must be installed as sudo for tipid.py to work.
 
 ## Scripts
-
 0. **Menu** (main.py) - Must be run as sudo. This is the main script of the program.
 1. **Fetch Comments** (fc.py) - This script fetches all HTML comments from a site specified by the user and outputs to STDOUT and ./comments.txt. This can be used from a cybersecurity standpoint as a way to look for any developer comments that made it to production that shouldn't have; such as passwords, keys, or other proprietary information.
 2. **Get Logs** (gl.sh) - This script outputs all `.log` files on a \*nix machine. Potential cybersecurity use cases include tracking down a specific log, what applications are running on the machine, and modification dates for DFIR. Run as sudo for different results.
@@ -49,8 +48,7 @@ This collection of standalone scripts was written with the intent to gather data
 - [ ] File metadata explorer
 - [ ] Hidden Form Items Finder for websites 
 - [ ] tunnel check script: ack tunneling, icmp tunneling, ssh tunneling
-- [ ] source routing check
-- [ ] Add error handling to scripts
+- [ ] create a menu item to run all scripts in main.py
 - [ ] port for windows (?exploratory; might be its own project)
 - [x] Add an output folder check to scripts
 - [x] create a menu (main.py) for the application
