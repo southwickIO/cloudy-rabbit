@@ -5,19 +5,19 @@
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 # NAME: fc.py                                                                 #
 #                                                                             #
-# VERSION: 20230321                                                           #
+# VERSION: 20230403                                                           #
 #                                                                             #
 # SYNOPSIS: Fetch HTML comments from a user specified site.                   #
 #                                                                             #
 # DESCRIPTION: This script fetches all HTML comments from a site specified by #
 # the user and outputs to STDOUT and ./comments.txt.                          #
 #                                                                             #
-# INPUT: 1.) Runtime user input                                               #
+# INPUT: Runtime user input                                                   #
 #                                                                             #
 # OUTPUT: 1.) STDOUT                                                          #
 #         2.) ./comments.txt                                                  #
 #                                                                             #
-# PRE-RUNTIME NOTES: 1.) None.                                                #
+# PRE-RUNTIME NOTES: None.                                                    #
 #                                                                             #
 # AUTHORS: @southwickio                                                       #
 #                                                                             #

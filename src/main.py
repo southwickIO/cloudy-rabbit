@@ -11,11 +11,11 @@
 #                                                                             #
 # DESCRIPTION: Help youself navigate the application with this simple menu.   #
 #                                                                             #
-# INPUT: 1.) Runtime user input                                               #
+# INPUT: Runtime user input                                                   #
 #                                                                             #
-# OUTPUT: 1.) STDOUT                                                          #
+# OUTPUT: STDOUT                                                              #
 #                                                                             #
-# PRE-RUNTIME NOTES: 1.) Must be run as sudo to properly work                 #
+# PRE-RUNTIME NOTES: Must be run as sudo to properly work                     #
 #                                                                             #
 # AUTHORS: @southwickio                                                       #
 #                                                                             #
@@ -64,11 +64,12 @@ while True:
 	print("4. Count Host Command (ch.sh)")
 	print("5. Detect Source Routing (ds.sh)")
 	print("6. Detect Network Packet Fragmentation (df.sh)")
+	print("7. Banner Grabber (bg.sh)")
 
 
 
 	#ingress choice
-	choice = int(input("\nEnter your choice (1-6): "))
+	choice = int(input("\nEnter your choice (1-7): "))
 
 
 
@@ -121,7 +122,7 @@ while True:
 
 
 	elif choice == 7:
-		subprocess.run(["python3", "./bg.py"])
+		subprocess.run(["bash", "./bg.sh"])
 		print("\n\n\n\n\n")		
 
 

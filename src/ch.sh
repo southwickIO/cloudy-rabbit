@@ -5,7 +5,7 @@
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
 # NAME: ch.sh                                                                 #
 #                                                                             #
-# VERSION: 20230322                                                           #
+# VERSION: 20230403                                                           #
 #                                                                             #
 # SYNOPSIS: Host command iteration for further analysis                       # 
 #                                                                             #
@@ -13,12 +13,12 @@
 #              occurences. This can assist an analyst in finding load         #
 #              balancers and help further map an external network.            #
 #                                                                             #
-# INPUT: 1.) Runtime user input                                               #
+# INPUT: Runtime user input                                                   #
 #                                                                             #
 # OUTPUT: 1.) STDOUT                                                          #
 #         2.) ../res/output/hostcommand.csv"                                  #
 #                                                                             #
-# PRE-RUNTIME NOTES: 1.) None                                                 #
+# PRE-RUNTIME NOTES: None                                                     #
 #                                                                             #
 # AUTHORS: @southwickio                                                       #
 #                                                                             #

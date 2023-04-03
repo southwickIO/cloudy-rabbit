@@ -5,7 +5,7 @@
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
 # NAME: ds.sh                                                                 #
 #                                                                             #
-# VERSION: 20230402                                                           #
+# VERSION: 20230403                                                           #
 #                                                                             #
 # SYNOPSIS: Checks source routing toggle                                      # 
 #                                                                             #
@@ -13,11 +13,11 @@
 #              to toggle source routing for user, and displays the users      #
 #              current routing table.                                         #
 #                                                                             #
-# INPUT: 1.) Runtime user input                                               #
+# INPUT: Runtime user input                                                   #
 #                                                                             #
-# OUTPUT: 1.) STDOUT                                                          #
+# OUTPUT: STDOUT                                                              #
 #                                                                             #
-# PRE-RUNTIME NOTES: 1.) None                                                 #
+# PRE-RUNTIME NOTES: None                                                     #
 #                                                                             #
 # AUTHORS: @southwickio                                                       #
 #                                                                             #

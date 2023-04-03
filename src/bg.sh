@@ -1,22 +1,47 @@
 #!/bin/bash
 
-# Array of ports to check
-ports=(21 22 23 25 53 80 110 143 443 3389)
 
-# Get the target URL or IP from the user
-read -p "Enter a URL or IP address: " target
 
-# Loop through each port and perform banner grabbing with nmap
-for port in "${ports[@]}"; do
-    # Run nmap to grab the banner for the port
-    banner=$(nmap -sV -p $port --script=banner $target | grep -i "Service Info")
-    if [ -n "$banner" ]; then
-        # Banner found
-        echo "Port $port: $banner"
-    else
-        # No banner found
-        echo "Port $port: Not open"
-    fi
-    # Wait for 1 second before moving on to the next port
-    sleep 1
-done
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+# NAME: bg.sh                                                                 #
+#                                                                             #
+# VERSION: 20230403                                                           #
+#                                                                             #
+# SYNOPSIS: Simple nmap wrapped banner grabber to be included with the suite  #
+#                                                                             #
+# DESCRIPTION: This script collects banners using nmap for some of the more   #
+#              popular ports.                                                 #
+#                                                                             #
+# INPUT: Runtime user input                                                   #
+#                                                                             #
+# OUTPUT: STDOUT                                                              #
+#                                                                             #
+# PRE-RUNTIME NOTES: This script scans domains. Consider local laws.          # 
+#                                                                             #
+# AUTHORS: @southwickio                                                       #
+#                                                                             #
+# LICENSE: GPLv3                                                              #
+#                                                                             #
+# DISCLAIMER: All work produced by Authors is provided “AS IS”. Authors make  #
+#             no warranties, express or implied, and hereby disclaims any and #
+#             all warranties, including, but not limited to, any warranty of  #
+#             fitness, application, et cetera, for any particular purpose,    #
+#             use case, or application of this script.                        #
+#                                                                             #
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+
+
+
+# Ask user for IP or URL input
+echo
+echo
+echo
+read -p "Enter IP or URL: " target
+
+
+
+# Run nmap with -sV flag and ports 20-8080
+echo
+echo
+echo
+nmap -sV -p20-9000 $target

@@ -2,12 +2,12 @@
 
 
 
-# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 # NAME: df.sh                                                                 #
 #                                                                             #
 # VERSION: 20230403                                                           #
 #                                                                             #
-# SYNOPSIS: Checks endpoint network packet fragmentation                      # 
+# SYNOPSIS: Checks endpoint network packet fragmentation                      #
 #                                                                             #
 # DESCRIPTION: This script does the following:                                #
 #              1.) Check MTU size and asks user if they want a reset to 1500  #
@@ -23,12 +23,12 @@
 #              3.) Lists indicators of fragmentation                          #
 #              4.) Perform script related cleanup duties                      #
 #                                                                             #
-# INPUT: 1.) Runtime user input                                               #
+# INPUT: Runtime user input                                                   #
 #                                                                             #
 # OUTPUT: 1.) STDOUT                                                          #
 #         2.) packets.cap (deleted at end)                                    #
 #                                                                             #
-# PRE-RUNTIME NOTES: 1.) This script sniffs packets. Consider local laws.     #
+# PRE-RUNTIME NOTES: This script sniffs packets. Consider local laws.         #
 #                                                                             #
 # AUTHORS: @southwickio                                                       #
 #                                                                             #

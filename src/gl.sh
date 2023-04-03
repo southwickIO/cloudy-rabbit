@@ -5,7 +5,7 @@
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
 # NAME: gl.sh                                                                 #
 #                                                                             #
-# VERSION: 20230321                                                           #
+# VERSION: 20230403                                                           #
 #                                                                             #
 # SYNOPSIS: Fetch .log files from a *nix machine                              # 
 #                                                                             #
@@ -15,12 +15,12 @@
 #              and modification dates for DFIR. Run as sudo for different     #
 #              results.                                                       #
 #                                                                             #
-# INPUT: 1.) Runtime user input                                               #
+# INPUT: Runtime user input                                                   #
 #                                                                             #
 # OUTPUT: 1.) STDOUT                                                          #
 #         2.) ./logs.csv                                                      #
 #                                                                             #
-# PRE-RUNTIME NOTES: 1.) None.                                                #
+# PRE-RUNTIME NOTES: None                                                     #
 #                                                                             #
 # AUTHORS: @southwickio                                                       #
 #                                                                             #

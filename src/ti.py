@@ -5,17 +5,18 @@
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 # NAME: ti.py                                                                 #
 #                                                                             #
-# VERSION: 20230402                                                           #
+# VERSION: 20230403                                                           #
 #                                                                             #
 # SYNOPSIS: Track IP-IDs for patterns and exploit analysis                    #
 #                                                                             #
 # DESCRIPTION: Analyze the IP-IDs of an IP address to determine order of IDs. #
-# Different patterns can help determine exploits or corroborate any idle      #
-# network scan that only scans for sequential IP-IDs. This was based on the   #
-# paper *A closer look at IP-ID behavior in the Wild* by Flavia Salutari,     #
-# Danilo Cicalese, and Dario J. Rossi.                                        #
+#              Different patterns can help determine exploits or corroborate  #
+#              any idle network scan that only scans for sequential IP-IDs.   #
+#              This was based on the paper *A closer look at IP-ID behavior   #
+#              in the Wild* by Flavia Salutari, Danilo Cicalese, and Dario J. #
+#              Rossi.                                                         #
 #                                                                             #
-# INPUT: 1.) Runtime user input                                               #
+# INPUT: Runtime user input                                                   #
 #                                                                             #
 # OUTPUT: 1.) STDOUT                                                          #
 #         2.) ./sample.pcap                                                   #
