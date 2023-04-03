@@ -1,5 +1,5 @@
 # Cloudy Rabbit
-> v. 20230402
+> v. 20230403
 
 > author: southwickio
 
@@ -14,7 +14,8 @@ This collection of standalone scripts was written with the intent to gather data
 ## Dependencies
 1. Python (>=3.8)
 2. Ubuntu (>=20.04) or relevant distro.
-3. scapy (`sudo pip3 install scapy`). Used for tipid.py and must be installed as sudo for tipid.py to work.
+3. scapy (`sudo pip3 install scapy`). Used for ti.py and must be installed as sudo for ti.py to work.
+4. ifconfig (`sudo apt install net-tools`). Used for df.sh to request information from interfaces.
 
 ## Scripts
 0. **Menu** (main.py) - Must be run as sudo. This is the main script of the program.
@@ -23,6 +24,7 @@ This collection of standalone scripts was written with the intent to gather data
 3. **Track IP-IDs** (ti.py) - Must be run as sudo. Analyze the IP-IDs of an IP address to determine order of IDs. Different patterns can help determine exploits or corroborate any idle network scan (with a zombie) that only scans for sequential IP-IDs. This was based on the paper *A closer look at IP-ID behavior in the Wild* by Flavia Salutari, Danilo Cicalese, and Dario J. Rossi.
 4. **Count Host Command** (ch.sh) - Must be run as sudo. Runs the host command N times and counts unique occurences across different geographical regions. This can assist an analyst in finding anomalous data and help further map an external network.
 5. **Detect Source Routing** (ds.sh) - Must be run as sudo. Checks if source routing is turned on (security risk), offers to toggle source routing for user, and displays the users current routing table.
+6. **Detect Network Packet Fragmentation** (df.sh) - Must be run as sudo. This script checks MTU size and listens to all interfaces for network packet fragmentation. Fragmentation is a lowish level indicator on it's own, but can help detect IDS evasion.
 
 ## Installation and Runtime
 ##### Note: There is no error handling for any script
@@ -32,17 +34,16 @@ This collection of standalone scripts was written with the intent to gather data
 4. Run any script with the prefix `./`. For example: `./fc.py` or `./gl.sh` or run the menu `sudo ./main.py`
 
 ## Todo
-- [ ] create a script that tells if packets are being fragmented or not. Fragmentation is a way to potentially bypass IDS.
-- [ ] Banner grabber using the same dns switing mechanisn from ch.sh
+- [ ] Banner grabber using the same dns switching mechanisn from ch.sh
 - [ ] script that detect iis lockdown tool, apache mod headers, and apache2.conf serversignature/server token settings. This could detect false or off banners
 - [ ] simple proxy creator script
-- [ ] http tunelling detection script. See ../res/Detecting HTTP tunneling.
+- [ ] http tunelling detection script. See ../res/Detecting HTTP tunneling
 - [ ] detect outbound ssh traffic script
 - [ ] simple custom vpn script
 - [ ] IP spoofing detection script. See ../res/detecting ip spoofing and the other one
 - [ ] bogon detection script
 - [ ] routing tables enumeration script
-- [ ] port 53, 445, 161-162, 389, 135, 137-139 enumeration script. make it quiet.
+- [ ] port 53, 445, 161-162, 389, 135, 137-139 enumeration script. make it quiet
 - [ ] sysinternals detector script
 - [ ] System Call Table explorer/detector for linux
 - [ ] File metadata explorer
@@ -53,3 +54,4 @@ This collection of standalone scripts was written with the intent to gather data
 - [x] Add an output folder check to scripts
 - [x] create a menu (main.py) for the application
 - [x] create a bash script that detects and toggles source routing
+- [x] create a script that tells if packets are being fragmented or not

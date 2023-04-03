@@ -5,7 +5,7 @@
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 # NAME: main.py                                                               #
 #                                                                             #
-# VERSION: 20230402                                                           #
+# VERSION: 20230403                                                           #
 #                                                                             #
 # SYNOPSIS: Main menu for the cloudy-rabbit application                       #
 #                                                                             #
@@ -55,39 +55,20 @@ while True:
 	print("Select a script:")
 	print("----------------\n")
 
+
+
 	#list scripts
-	print('''1. Fetch Comments (fc.py) - This script fetches all HTML comments
-from a site specified by the user and outputs to STDOUT and 
-./comments.txt. This can be used from a cybersecurity standpoint as a 
-way to look for any developer comments that made it to production that
-shouldn't have; such as passwords, keys, or other proprietary 
-information.\n''')
-
-	print('''2. Get Logs (gl.sh) - This script outputs all `.log` files on a 
-nix machine. Potential cybersecurity use cases include tracking down
-a specific log, what applications are running on the machine, and 
-modification dates for DFIR. Run as sudo for different results.\n''')
-	
-	print('''3. Track IP-IDs (ti.py) - Must be run as sudo. Analyze the
-IP-IDs of an IP address to determine order of IDs. Different patterns
-can help determine exploits or corroborate any idle network scan (with
-a zombie) that only scans for sequential IP-IDs. This was based on the
-paper *A closer look at IP-ID behavior in the Wild* by Flavia Salutari,
-Danilo Cicalese, and Dario J. Rossi.\n''')
-	
-	print('''4. Count Host Command (ch.sh) - Must be run as sudo. Runs the host
-command N times and counts unique occurences across different
-geographical regions. This can assist an analyst in finding anomalous
-data and help further map an external network.\n''')
-
-	print('''5. Detect Source Routing (ds.sh) - Checks if source routing is
-turned on (security risk), offers to toggle source routing for user, and
-displays the users current routing table.\n''')
+	print("1. Fetch Comments (fc.py)")
+	print("2. Get Logs (gl.sh)")
+	print("3. Track IP-IDs (ti.py)")
+	print("4. Count Host Command (ch.sh)")
+	print("5. Detect Source Routing (ds.sh)")
+	print("6. Detect Network Packet Fragmentation (df.sh)")
 
 
 
 	#ingress choice
-	choice = int(input("\nEnter your choice (1-5): "))
+	choice = int(input("\nEnter your choice (1-6): "))
 
 
 
@@ -121,7 +102,22 @@ displays the users current routing table.\n''')
 	elif choice == 5:
 		subprocess.run(["bash", "./ds.sh"])
 		print("\n\n\n\n\n")
-		
+
+
+
+	elif choice == 6:
+
+		#try clause for tcpdump quit
+		try:
+
+			subprocess.run(["bash", "./df.sh"])
+
+		except KeyboardInterrupt:
+
+			pass
+
+		print("\n\n\n\n\n")		
+
 
 
 	else:

@@ -5,7 +5,7 @@
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
 # NAME: df.sh                                                                 #
 #                                                                             #
-# VERSION: 20230402                                                           #
+# VERSION: 20230403                                                           #
 #                                                                             #
 # SYNOPSIS: Checks endpoint network packet fragmentation                      # 
 #                                                                             #
@@ -28,7 +28,7 @@
 # OUTPUT: 1.) STDOUT                                                          #
 #         2.) packets.cap (deleted at end)                                    #
 #                                                                             #
-# PRE-RUNTIME NOTES: 1.) None                                                 #
+# PRE-RUNTIME NOTES: 1.) This script sniffs packets. Consider local laws.     #
 #                                                                             #
 # AUTHORS: @southwickio                                                       #
 #                                                                             #
@@ -50,7 +50,7 @@ echo
 echo
 echo "List of network interfaces and their MTU size:"
 
-ifconfig -a | grep -oP '^\S+: .*mtu \K\d+'
+ifconfig -a | awk '/^[^ ]/ { iface=$1; } /mtu/ { print iface " MTU=" $NF }'
 
 
 
@@ -64,40 +64,72 @@ read -p "Do you want to change MTU size for all interfaces with MTU not equal to
 
 #change MTU to default if requested
 if [ "$answer" == "y" ]; then
-  # Change MTU size for all interfaces with MTU not equal to 1500
+
   for iface in $(ifconfig -a | grep -oP '^\S+')
   do
+
     mtu=$(ifconfig $iface | grep -oP 'mtu \K\d+')
+    
     if [ "$mtu" != "1500" ]; then
+
+      echo
+      echo
+      echo
       echo "Changing MTU size of $iface from $mtu to 1500"
+      
       sudo ifconfig $iface mtu 1500
+
     fi
+  
   done
+
 fi
 
-# Get duration of tcpdump capture
-read -p "How many seconds would you like to listen for fragmented packets?: " duration
 
-# Capture packets with MF flag set
-echo "Listening for fragmented packets for $duration seconds..."
-sudo tcpdump -v -i any 'ip[6] & 0x1 != 0' -G $duration -W 1 -w packets.cap
 
-# Check if there were any hits
+#get packet count
+echo
+echo
+echo
+read -p "How many packets would you like to sniff for fragmented packets: " count
+
+
+
+#capture packets with MF flag set
+echo
+echo
+echo
+echo "Listening for fragmented packets for $count packets..."
+echo
+echo
+echo
+echo "Press CTRL+C to stop sniffing before $count packets."
+echo "Run the following command in another terminal if you want to test:"
+echo "ping -c 3 -s 3000 8.8.8.8"
+echo
+echo
+echo
+sudo tcpdump -v -i any -c $count 'ip[6] & 0x1 != 0' -w packets.cap
+
+
+
+#change to proper ownership
+sudo chown $(whoami) packets.cap
+
+
+#check for hits
 if [ -s packets.cap ]; then
-  # List destination addresses of captured packets
-  echo "Fragmented packets detected. Destination addresses:"
-  sudo tcpdump -nn -r packets.cap 'ip[6] & 0x1 != 0' | awk '{print $3}' | sort -u
-else
-  echo "No fragmented packets detected."
+
+  #list destination addresses of any hits
+  echo
+  echo
+  echo
+  echo "Any hits listed with source and destination address."
+  sudo tcpdump -nn -r packets.cap 'ip[6] & 0x1 != 0' | awk '{print "Source address: " $3 " " "Destination address: " $5}' | sort -u
+
 fi
 
-# Clean up
+
+
+#clean up
 rm -f packets.cap
-
-
-
-
-
-
-
-test with ping -c 1 -s 3000 8.8.8.8
