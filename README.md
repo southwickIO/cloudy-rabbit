@@ -25,6 +25,7 @@ This collection of standalone scripts was written with the intent to gather data
 4. **Count Host Command** (ch.sh) - Must be run as sudo. Runs the host command N times and counts unique occurences across different geographical regions. This can assist an analyst in finding anomalous data and help further map an external network.
 5. **Detect Source Routing** (ds.sh) - Must be run as sudo. Checks if source routing is turned on (security risk), offers to toggle source routing for user, and displays the users current routing table.
 6. **Detect Network Packet Fragmentation** (df.sh) - Must be run as sudo. This script checks MTU size and listens to all interfaces for network packet fragmentation. Fragmentation is a lowish level indicator on it's own, but can help detect IDS evasion.
+7. **Banner Grabber** (bg.sh) - Collects banners for some of the more popular ports.
 
 ## Installation and Runtime
 ##### Note: There is no error handling for any script
@@ -34,23 +35,20 @@ This collection of standalone scripts was written with the intent to gather data
 4. Run any script with the prefix `./`. For example: `./fc.py` or `./gl.sh` or run the menu `sudo ./main.py`
 
 ## Todo
-- [ ] Banner grabber using the same dns switching mechanisn from ch.sh
-- [ ] script that detect iis lockdown tool, apache mod headers, and apache2.conf serversignature/server token settings. This could detect false or off banners
-- [ ] simple proxy creator script
+- [ ] Banner grabber for several ports at once (p)
+- [ ] script that detect iis lockdown tool, apache mod headers, and apache2.conf serversignature/server token settings. This could detect false or off banners (p)
+- [ ] simple proxy creator script (p/b)
 - [ ] http tunelling detection script. See ../res/Detecting HTTP tunneling
-- [ ] detect outbound ssh traffic script
-- [ ] simple custom vpn script
+- [ ] detect outbound ssh traffic script (b)
+- [ ] simple custom vpn script (p/b)
 - [ ] IP spoofing detection script. See ../res/detecting ip spoofing and the other one
-- [ ] bogon detection script
-- [ ] routing tables enumeration script
-- [ ] port 53, 445, 161-162, 389, 135, 137-139 enumeration script. make it quiet
-- [ ] sysinternals detector script
-- [ ] System Call Table explorer/detector for linux
-- [ ] File metadata explorer
-- [ ] Hidden Form Items Finder for websites 
+- [ ] bogon detection script (b)
+- [ ] port 53, 445, 161-162, 389, 135, 137-139 enumeration script. make it quiet (p)
+- [ ] System Call Table explorer/detector for linux (b)
+- [ ] File metadata explorer (p/b)
+- [ ] Hidden Form Items Finder for websites (p) 
 - [ ] tunnel check script: ack tunneling, icmp tunneling, ssh tunneling
 - [ ] create a menu item to run all scripts in main.py
-- [ ] port for windows (?exploratory; might be its own project)
 - [x] Add an output folder check to scripts
 - [x] create a menu (main.py) for the application
 - [x] create a bash script that detects and toggles source routing

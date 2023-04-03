@@ -116,6 +116,12 @@ while True:
 
 			pass
 
+		print("\n\n\n\n\n")
+
+
+
+	elif choice == 7:
+		subprocess.run(["python3", "./bg.py"])
 		print("\n\n\n\n\n")		
 
 
