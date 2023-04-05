@@ -5,7 +5,7 @@
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 # NAME: main.py                                                               #
 #                                                                             #
-# VERSION: 20230403                                                           #
+# VERSION: 20230405                                                           #
 #                                                                             #
 # SYNOPSIS: Main menu for the cloudy-rabbit application                       #
 #                                                                             #
@@ -65,6 +65,7 @@ while True:
 	print("5. Detect Source Routing (ds.sh)")
 	print("6. Detect Network Packet Fragmentation (df.sh)")
 	print("7. Banner Grabber (bg.sh)")
+	print("8. Detect IIS Lockdown Tool (di.py)")
 
 
 
@@ -123,6 +124,12 @@ while True:
 
 	elif choice == 7:
 		subprocess.run(["bash", "./bg.sh"])
+		print("\n\n\n\n\n")
+
+
+
+	elif choice == 8:
+		subprocess.run(["python3", "./di.py"])
 		print("\n\n\n\n\n")		
 
 

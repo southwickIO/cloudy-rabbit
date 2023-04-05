@@ -1,5 +1,5 @@
 # Cloudy Rabbit
-> v. 20230403
+> v. 20230405
 
 > author: southwickio
 
@@ -18,6 +18,13 @@ This collection of standalone scripts was written with the intent to gather data
 4. ifconfig (`sudo apt install net-tools`). Used for df.sh to request information from interfaces.
 5. nmap (`sudo apt install nmap`). Used for bg.sh to scan some port services.
 
+## Installation and Runtime
+##### Note: There is no error handling. Please read each script header before use. 
+1. `git clone github.com/southwickIO/cloudy-rabbit`
+2. `cd cloudy-rabbit/`
+3. `chmod -R u+x cloudy-rabbit/`
+4. Run any script with the prefix `./`. For example: `./fc.py` or `./gl.sh` or run the menu `sudo ./main.py`
+
 ## Scripts
 0. **Menu** (main.py) - Must be run as sudo. This is the main script of the program.
 1. **Fetch Comments** (fc.py) - This script fetches all HTML comments from a site specified by the user and outputs to STDOUT and ./comments.txt. This can be used from a cybersecurity standpoint as a way to look for any developer comments that made it to production that shouldn't have; such as passwords, keys, or other proprietary information.
@@ -27,16 +34,11 @@ This collection of standalone scripts was written with the intent to gather data
 5. **Detect Source Routing** (ds.sh) - Must be run as sudo. Checks if source routing is turned on (security risk), offers to toggle source routing for user, and displays the users current routing table.
 6. **Detect Network Packet Fragmentation** (df.sh) - Must be run as sudo. This script checks MTU size and listens to all interfaces for network packet fragmentation. Fragmentation is a lowish level indicator on it's own, but can help detect IDS evasion.
 7. **Banner Grabber** (bg.sh) - Collects banners using nmap for some of the more popular ports.
-
-## Installation and Runtime
-##### Note: There is no error handling for any script
-1. `git clone github.com/southwickIO/cloudy-rabbit`
-2. `cd cloudy-rabbit/`
-3. `chmod -R u+x cloudy-rabbit/`
-4. Run any script with the prefix `./`. For example: `./fc.py` or `./gl.sh` or run the menu `sudo ./main.py`
+8. **Detect IIS Lockdown Tool** (di.py) - This script checks a remote server to see if it is an IIS server. If so, a check is done for the IIS Lockdown Tool. The IIS Lockdown Tool is a security tool developed by Microsoft to help secure IIS web servers.
 
 ## Todo
-- [ ] script that detect iis lockdown tool, apache mod headers, and apache2.conf serversignature/server token settings. This could detect false or off banners (p)
+- [ ] script that detects apache mod headers. This could detect false or off banners (p)
+- [ ] script that detects and apache2.conf serversignature/server token settings. This could detect false or off banners (p)
 - [ ] simple proxy creator script (p/b)
 - [ ] http tunelling detection script. See ../res/Detecting HTTP tunneling
 - [ ] detect outbound ssh traffic script (b)
@@ -54,3 +56,4 @@ This collection of standalone scripts was written with the intent to gather data
 - [x] create a bash script that detects and toggles source routing
 - [x] create a script that tells if packets are being fragmented or not
 - [x] banner grabber for several ports at once
+- [x] script that detects IIS lockdown tool
