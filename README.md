@@ -1,5 +1,5 @@
 # Cloudy Rabbit
-> v. 20230405
+> v. 20230406
 
 > author: southwickio
 
@@ -35,9 +35,9 @@ This collection of standalone scripts was written with the intent to gather data
 6. **Detect Network Packet Fragmentation** (df.sh) - Must be run as sudo. This script checks MTU size and listens to all interfaces for network packet fragmentation. Fragmentation is a lowish level indicator on it's own, but can help detect IDS evasion.
 7. **Banner Grabber** (bg.sh) - Collects banners using nmap for some of the more popular ports.
 8. **Detect IIS Lockdown Tool** (di.py) - This script checks a remote server to see if it is an IIS server. If so, a check is done for the IIS Lockdown Tool. The IIS Lockdown Tool is a security tool developed by Microsoft to help secure IIS web servers.
+9. **Detect Mod_headers** (dm.py) - This script checks a remote server to see if it is an Apache Server. If so, a check is done for mod_headers. Apache mod_headers is a module for the Apache web server that allows you to modify HTTP request and response headers. This allows a network defender to obfuscate banners if wanted.
 
 ## Todo
-- [ ] script that detects apache mod headers. This could detect false or off banners (p)
 - [ ] script that detects and apache2.conf serversignature/server token settings. This could detect false or off banners (p)
 - [ ] simple proxy creator script (p/b)
 - [ ] http tunelling detection script. See ../res/Detecting HTTP tunneling
@@ -57,3 +57,4 @@ This collection of standalone scripts was written with the intent to gather data
 - [x] create a script that tells if packets are being fragmented or not
 - [x] banner grabber for several ports at once
 - [x] script that detects IIS lockdown tool
+- [x] script that detects apache mod headers. This could detect false or off banners

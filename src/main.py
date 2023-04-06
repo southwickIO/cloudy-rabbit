@@ -5,7 +5,7 @@
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 # NAME: main.py                                                               #
 #                                                                             #
-# VERSION: 20230405                                                           #
+# VERSION: 20230406                                                           #
 #                                                                             #
 # SYNOPSIS: Main menu for the cloudy-rabbit application                       #
 #                                                                             #
@@ -66,11 +66,12 @@ while True:
 	print("6. Detect Network Packet Fragmentation (df.sh)")
 	print("7. Banner Grabber (bg.sh)")
 	print("8. Detect IIS Lockdown Tool (di.py)")
+	print("9. Detect mod_headers (dm.py)")
 
 
 
 	#ingress choice
-	choice = int(input("\nEnter your choice (1-7): "))
+	choice = int(input("\nEnter your choice (1-9): "))
 
 
 
@@ -130,8 +131,13 @@ while True:
 
 	elif choice == 8:
 		subprocess.run(["python3", "./di.py"])
-		print("\n\n\n\n\n")		
+		print("\n\n\n\n\n")	
 
+
+
+	elif choice == 9:
+		subprocess.run(["python3", "./dm.py"])
+		print("\n\n\n\n\n")	
 
 
 	else:
