@@ -39,7 +39,7 @@ This collection of standalone scripts was written with the intent to gather data
 10. **Detect Apache ServerSignature/ServerTokens** (da.py) - This script checks the remote server to see if it is an Apache server. If it is, it checks for the "ServerSignature" and "ServerTokens" headers/directives. The "ServerSignature" directive controls whether the server includes a footer line containing the server version number and other information in error messages and directory listings. The "ServerTokens" directive controls the level of detail in the server response headers. A network defender can raise the sensitivity higher than the default to reduce the attack surface. This script checks if the network defender did that.
 
 ## Todo
-- [o] simple proxy creator script (p/b)
+- [ ] simple proxy creator script (p/b)
 - [ ] http tunelling detection script. See ../res/Detecting HTTP tunneling
 - [ ] detect outbound ssh traffic script (b)
 - [ ] simple custom vpn script (p/b)
@@ -49,8 +49,8 @@ This collection of standalone scripts was written with the intent to gather data
 - [ ] System Call Table explorer/detector for linux (b)
 - [ ] File metadata explorer (p/b)
 - [ ] Hidden Form Items Finder for websites (p) 
-- [ ] tunnel check script: ack tunneling, icmp tunneling, ssh tunneling
-- [ ] create a script that detects virtual routing/hosting
+- [ ] tunnel check script: ack tunneling, icmp tunneling, ssh tunneling (b)
+- [ ] create a script that detects virtual routing/hosting (b)
 - [ ] create a menu item to run all scripts in main.py along with the option to do it for the same IP; another option to run internal scripts/external scripts
 - [ ] check the scripts that ask for ip/url exclusively and consider a check for the other name to check for virtual routing/hosting
 - [x] add an output folder check to scripts
