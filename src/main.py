@@ -5,7 +5,7 @@
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 # NAME: main.py                                                               #
 #                                                                             #
-# VERSION: 20230406                                                           #
+# VERSION: 20230407                                                           #
 #                                                                             #
 # SYNOPSIS: Main menu for the cloudy-rabbit application                       #
 #                                                                             #
@@ -58,20 +58,21 @@ while True:
 
 
 	#list scripts
-	print("1. Fetch Comments (fc.py)")
-	print("2. Get Logs (gl.sh)")
-	print("3. Track IP-IDs (ti.py)")
-	print("4. Count Host Command (ch.sh)")
-	print("5. Detect Source Routing (ds.sh)")
-	print("6. Detect Network Packet Fragmentation (df.sh)")
-	print("7. Banner Grabber (bg.sh)")
-	print("8. Detect IIS Lockdown Tool (di.py)")
-	print("9. Detect mod_headers (dm.py)")
+	print("1.  Fetch Comments (fc.py)")
+	print("2.  Get Logs (gl.sh)")
+	print("3.  Track IP-IDs (ti.py)")
+	print("4.  Count Host Command (ch.sh)")
+	print("5.  Detect Source Routing (ds.sh)")
+	print("6.  Detect Network Packet Fragmentation (df.sh)")
+	print("7.  Banner Grabber (bg.sh)")
+	print("8.  Detect IIS Lockdown Tool (di.py)")
+	print("9.  Detect mod_headers (dm.py)")
+	print("10. Detect ServerSignature/ServerTokens (da.py)")
 
 
 
 	#ingress choice
-	choice = int(input("\nEnter your choice (1-9): "))
+	choice = int(input("\nEnter your choice (1-10): "))
 
 
 
@@ -140,6 +141,13 @@ while True:
 		print("\n\n\n\n\n")	
 
 
+
+	elif choice == 10:
+		subprocess.run(["python3", "./da.py"])
+		print("\n\n\n\n\n")	
+
+
+
 	else:
 		print("\n\n\n\n\n")
 
@@ -148,10 +156,15 @@ while True:
 	#offer another run
 	updown = input("Would you like to run another script (y/n): ")
 
+
+
+	#check if user wants another run
 	if updown == 'y' or updown == 'Y':
 
 		continue
 	
+
+
 	else:
 
 		#end menu

@@ -1,5 +1,5 @@
 # Cloudy Rabbit
-> v. 20230406
+> v. 20230407
 
 > author: southwickio
 
@@ -36,10 +36,10 @@ This collection of standalone scripts was written with the intent to gather data
 7. **Banner Grabber** (bg.sh) - Collects banners using nmap for some of the more popular ports.
 8. **Detect IIS Lockdown Tool** (di.py) - This script checks a remote server to see if it is an IIS server. If so, a check is done for the IIS Lockdown Tool. The IIS Lockdown Tool is a security tool developed by Microsoft to help secure IIS web servers.
 9. **Detect Mod_headers** (dm.py) - This script checks a remote server to see if it is an Apache Server. If so, a check is done for mod_headers. Apache mod_headers is a module for the Apache web server that allows you to modify HTTP request and response headers. This allows a network defender to obfuscate banners if wanted.
+10. **Detect Apache ServerSignature/ServerTokens** (da.py) - This script checks the remote server to see if it is an Apache server. If it is, it checks for the "ServerSignature" and "ServerTokens" headers/directives. The "ServerSignature" directive controls whether the server includes a footer line containing the server version number and other information in error messages and directory listings. The "ServerTokens" directive controls the level of detail in the server response headers. A network defender can raise the sensitivity higher than the default to reduce the attack surface. This script checks if the network defender did that.
 
 ## Todo
-- [ ] script that detects and apache2.conf serversignature/server token settings. This could detect false or off banners (p)
-- [ ] simple proxy creator script (p/b)
+- [o] simple proxy creator script (p/b)
 - [ ] http tunelling detection script. See ../res/Detecting HTTP tunneling
 - [ ] detect outbound ssh traffic script (b)
 - [ ] simple custom vpn script (p/b)
@@ -50,7 +50,9 @@ This collection of standalone scripts was written with the intent to gather data
 - [ ] File metadata explorer (p/b)
 - [ ] Hidden Form Items Finder for websites (p) 
 - [ ] tunnel check script: ack tunneling, icmp tunneling, ssh tunneling
-- [ ] create a menu item to run all scripts in main.py along with the option to do it for the same IP
+- [ ] create a script that detects virtual routing/hosting
+- [ ] create a menu item to run all scripts in main.py along with the option to do it for the same IP; another option to run internal scripts/external scripts
+- [ ] check the scripts that ask for ip/url exclusively and consider a check for the other name to check for virtual routing/hosting
 - [x] add an output folder check to scripts
 - [x] create a menu (main.py) for the application
 - [x] create a bash script that detects and toggles source routing
@@ -58,3 +60,4 @@ This collection of standalone scripts was written with the intent to gather data
 - [x] banner grabber for several ports at once
 - [x] script that detects IIS lockdown tool
 - [x] script that detects apache mod headers. This could detect false or off banners
+- [x] script that detects and apache2.conf serversignature/server token settings
