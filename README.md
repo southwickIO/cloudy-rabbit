@@ -6,7 +6,7 @@
 <br>
 
 ## Overview
-Simple reconnaissance and threat hunting toolbox.
+Simple reconnaissance and threat hunting toolbox. This project is meant to be run on Linux.
 
 ## Description
 This collection of standalone scripts was written with the intent to gather data for some specific cybersecurity and threat hunting use cases. These scripts are quick 'n' dirty and cover some standalone tasks I wasn't able to find in the wild or wanted to create my own. This repo is a toolbox that covers diverse areas of reconnaissance.
