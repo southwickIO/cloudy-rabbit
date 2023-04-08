@@ -1,5 +1,5 @@
 # Cloudy Rabbit
-> v. 20230407
+> v. 20230408
 
 > author: southwickio
 
@@ -9,12 +9,12 @@
 Simple reconnaissance and threat hunting toolbox. This project is meant to be run on Linux.
 
 ## Description
-This collection of standalone scripts was written with the intent to gather data for some specific cybersecurity and threat hunting use cases. These scripts are quick 'n' dirty and cover some standalone tasks I wasn't able to find in the wild or wanted to create my own. This repo is a toolbox that covers diverse areas of reconnaissance.
+This collection of standalone scripts was written with the intent to gather data for some specific cybersecurity and threat hunting use cases. These scripts are quick 'n' dirty and cover some standalone tasks I wasn't able to find in the wild or wanted to create my own or wanted to learn about. This toolbox covers diverse areas of reconnaissance and the standalone scripts aren't related to each other outside of falling under the reconnaissance phase of an engagement.
 
 ## Dependencies
 1. Python (>=3.8)
 2. Ubuntu (>=20.04) or relevant distro.
-3. scapy (`sudo pip3 install scapy`). Used for ti.py and must be installed as sudo for ti.py to work.
+3. scapy (`sudo pip3 install scapy`). Used for ti.py/st.py and must be installed as sudo for the scripts to work.
 4. ifconfig (`sudo apt install net-tools`). Used for df.sh to request information from interfaces.
 5. nmap (`sudo apt install nmap`). Used for bg.sh to scan some port services.
 
@@ -37,10 +37,9 @@ This collection of standalone scripts was written with the intent to gather data
 8. **Detect IIS Lockdown Tool** (di.py) - This script checks a remote server to see if it is an IIS server. If so, a check is done for the IIS Lockdown Tool. The IIS Lockdown Tool is a security tool developed by Microsoft to help secure IIS web servers.
 9. **Detect Mod_headers** (dm.py) - This script checks a remote server to see if it is an Apache Server. If so, a check is done for mod_headers. Apache mod_headers is a module for the Apache web server that allows you to modify HTTP request and response headers. This allows a network defender to obfuscate banners if wanted.
 10. **Detect Apache ServerSignature/ServerTokens** (da.py) - This script checks the remote server to see if it is an Apache server. If it is, it checks for the "ServerSignature" and "ServerTokens" headers/directives. The "ServerSignature" directive controls whether the server includes a footer line containing the server version number and other information in error messages and directory listings. The "ServerTokens" directive controls the level of detail in the server response headers. A network defender can raise the sensitivity higher than the default to reduce the attack surface. This script checks if the network defender did that.
+11. **Sniff for HTTP Tunneling** (st.py) - Must be run as sudo. This script looks for over a dozen different indicators of potential HTTP tunelling by running a check on each port 80 and 443 packet. Custom ports are also considered in the script.
 
 ## Todo
-- [ ] simple proxy creator script (p/b)
-- [ ] http tunelling detection script. See ../res/Detecting HTTP tunneling
 - [ ] detect outbound ssh traffic script (b)
 - [ ] simple custom vpn script (p/b)
 - [ ] IP spoofing detection script. See ../res/detecting ip spoofing and the other one
@@ -61,3 +60,4 @@ This collection of standalone scripts was written with the intent to gather data
 - [x] script that detects IIS lockdown tool
 - [x] script that detects apache mod headers. This could detect false or off banners
 - [x] script that detects and apache2.conf serversignature/server token settings
+- [x] HTTP tunelling detection script

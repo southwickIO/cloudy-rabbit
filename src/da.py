@@ -5,19 +5,19 @@
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 # NAME: da.py                                                                 #
 #                                                                             #
-# VERSION: 20230407                                                           #
+# VERSION: 20230408                                                           #
 #                                                                             #
 # SYNOPSIS: Check for Apache ServerSignature/ServerTokens on remote server    #
 #                                                                             #
 # DESCRIPTION: This script checks the remote server to see if it is an Apache #
-#              server. If it is, it checks for the "ServerSignature" and      # 
+#              server. If it is, it checks for the "ServerSignature" and      #
 #              "ServerTokens" headers/directives. The "ServerSignature"       #
 #              directive controls whether the server includes a footer line   #
 #              containing the server version number and other information in  #
 #              error messages and directory listings. The "ServerTokens"      #
 #              directive controls the level of detail in the server response  #
 #              headers. A network defender can raise the sensitivity higher   #
-#              than the default to reduce the attack surface. This script     #    
+#              than the default to reduce the attack surface. This script     #
 #              checks if the network defender did that.                       #
 #                                                                             #
 # INPUT: Runtime user input                                                   #
