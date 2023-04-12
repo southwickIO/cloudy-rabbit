@@ -14,9 +14,9 @@ This collection of standalone scripts was written with the intent to gather data
 ## Dependencies
 1. Python (>=3.8)
 2. Ubuntu (>=20.04) or relevant distro.
-3. scapy (`sudo pip3 install scapy`). Used for ti.py, st.py, and ip.py and must be installed as sudo for the scripts to work.
+3. scapy (`sudo pip3 install scapy`). Used for several scripts and must be installed as sudo for those scripts to work.
 4. ifconfig (`sudo apt install net-tools`). Used for df.sh to request information from interfaces.
-5. nmap (`sudo apt install nmap`). Used for bg.sh to scan some port services.
+5. nmap (`sudo apt install nmap`). Used for a couple scripts to scan some port services.
 
 ## Installation and Runtime
 ##### Note: There is no error handling. Please read each script header before use. 
@@ -39,14 +39,16 @@ This collection of standalone scripts was written with the intent to gather data
 10. **Detect Apache ServerSignature/ServerTokens** (da.py) - This script checks the remote server to see if it is an Apache server. If it is, it checks for the "ServerSignature" and "ServerTokens" headers/directives. The "ServerSignature" directive controls whether the server includes a footer line containing the server version number and other information in error messages and directory listings. The "ServerTokens" directive controls the level of detail in the server response headers. A network defender can raise the sensitivity higher than the default to reduce the attack surface. This script checks if the network defender did that.
 11. **Sniff for HTTP Tunneling** (st.py) - Must be run as sudo. This script looks for over a dozen different indicators of potential HTTP tunelling by running a check on each port 80 and 443 packet. Custom ports are also considered in the script.
 12. **Detect IP Spoofing** (ip.py) - Must be run as sudo. This script looks for potential IP spoofing by crafting, and sending, a SYN/ACK packet that advertizes a window size of 0. No communications are possible with a window size of 0, so if a suspicious IP responds to that SYN/ACK, it is a good indication that the IP is being spoofed. The window size on packets from A to B indicate how much buffer space is available on A for receiving packets. So when B receives a packet with window size 1, it would tell B how many bytes it is allowed to send to A before getting a response.
+13. **Detect Bogon Traffic** (db.py) - Must be run as sudo. This script looks for bogon traffic coming in from the internet. This is a huge sign of spoofing or something malicious. Bogon networks are IP addresses or ranges of IP addresses that have not been allocated or assigned to any organization or user, and thus are not supposed to be used in the public internet. They are typically blocked by network administrators to prevent traffic from those networks from entering or leaving the network.
 
 ## Todo
-- [ ] bogon detection script (b)
-- [ ] port 53, 445, 161-162, 389, 135, 137-139 enumeration script. make it quiet (p)
+- [ ] port 53, 445, 161-162, 389, 135, 137-139 enumeration script. make it quiet (b)
 - [ ] System Call Table explorer/detector for linux (b)
 - [ ] File metadata explorer (b)
 - [ ] Hidden Form Items Finder for websites (p) 
-- [ ] tunnel check script: ack tunneling, icmp tunneling, ssh tunneling (b)
+- [ ] detect ack tunneling script (p)
+- [ ] detect icmp tunneling script (p)
 - [ ] create a script that detects virtual routing/hosting (b)
+
 - [ ] create a menu item to run all scripts in main.py along with the option to do it for the same IP; another option to run internal scripts/external scripts
 - [ ] check the scripts that ask for ip/url exclusively and consider a check for the other name to check for virtual routing/hosting

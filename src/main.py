@@ -70,11 +70,12 @@ while True:
     print("10. Detect ServerSignature/ServerTokens (da.py)")
     print("11. Sniff for HTTP Tunneling (st.py)")
     print("12. Detect IP Spoofing (ip.py)")
+    print("13. Detect Bogon Traffic (db.py)")
 
 
 
     #ingress choice
-    choice = int(input("\nEnter your choice (1-12): "))
+    choice = int(input("\nEnter your choice (1-13): "))
 
 
 
@@ -177,6 +178,23 @@ while True:
             pass
         
         print("\n\n\n\n\n")
+
+
+
+    elif choice == 13:
+
+        #try clause for scapy quit
+        try:
+
+            subprocess.run(["python3", "./db.py"])
+ 
+        except KeyboardInterrupt:
+
+            pass
+        
+        print("\n\n\n\n\n")
+
+
 
 
 
