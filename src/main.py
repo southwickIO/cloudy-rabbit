@@ -5,7 +5,7 @@
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 # NAME: main.py                                                               #
 #                                                                             #
-# VERSION: 20230408                                                           #
+# VERSION: 20230411                                                           #
 #                                                                             #
 # SYNOPSIS: Main menu for the cloudy-rabbit application                       #
 #                                                                             #
@@ -69,11 +69,12 @@ while True:
     print("9.  Detect mod_headers (dm.py)")
     print("10. Detect ServerSignature/ServerTokens (da.py)")
     print("11. Sniff for HTTP Tunneling (st.py)")
+    print("12. Detect IP Spoofing (ip.py)")
 
 
 
     #ingress choice
-    choice = int(input("\nEnter your choice (1-10): "))
+    choice = int(input("\nEnter your choice (1-12): "))
 
 
 
@@ -82,20 +83,20 @@ while True:
 
         subprocess.run(["python3", "./fc.py"])
         print("\n\n\n\n\n")
-        
+
 
 
     elif choice == 2:
 
         subprocess.run(["bash", "./gl.sh"])
         print("\n\n\n\n\n")
-        
+
 
 
     elif choice == 3:
         subprocess.run(["python3", "./ti.py"])
         print("\n\n\n\n\n")
-        
+
 
 
     elif choice == 4:
@@ -133,13 +134,13 @@ while True:
 
     elif choice == 8:
         subprocess.run(["python3", "./di.py"])
-        print("\n\n\n\n\n")    
+        print("\n\n\n\n\n")
 
 
 
     elif choice == 9:
         subprocess.run(["python3", "./dm.py"])
-        print("\n\n\n\n\n")    
+        print("\n\n\n\n\n")
 
 
 
@@ -160,7 +161,23 @@ while True:
 
             pass
         
-        print("\n\n\n\n\n")  
+        print("\n\n\n\n\n")
+
+
+
+    elif choice == 12:
+
+        #try clause for scapy quit
+        try:
+
+            subprocess.run(["python3", "./ip.py"])
+ 
+        except KeyboardInterrupt:
+
+            pass
+        
+        print("\n\n\n\n\n")
+
 
 
     else:

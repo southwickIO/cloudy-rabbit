@@ -5,7 +5,7 @@
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 # NAME: st.py                                                                 #
 #                                                                             #
-# VERSION: 20230408                                                           #
+# VERSION: 20230411                                                           #
 #                                                                             #
 # SYNOPSIS: Check for potential HTTP tunneling on a local host                #
 #                                                                             #
@@ -234,7 +234,8 @@ detected: " + packet[HTTPRequest].Path)
 
 
 #sniff on all interfaces
-print("\n\n\nIndicators will be printed for each packet. If you want a record outside of STDOUT, restart this script and output to your file.")
+print("\n\n\nIndicators will be printed for each packet. If you want a record \
+    outside of STDOUT, restart this script and output to your file.")
 print("[ctrl+c to exit sniffing]")
 
 time.sleep(5)

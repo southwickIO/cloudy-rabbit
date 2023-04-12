@@ -1,5 +1,5 @@
 # Cloudy Rabbit
-> v. 20230408
+> v. 20230411
 
 > author: southwickio
 
@@ -14,7 +14,7 @@ This collection of standalone scripts was written with the intent to gather data
 ## Dependencies
 1. Python (>=3.8)
 2. Ubuntu (>=20.04) or relevant distro.
-3. scapy (`sudo pip3 install scapy`). Used for ti.py/st.py and must be installed as sudo for the scripts to work.
+3. scapy (`sudo pip3 install scapy`). Used for ti.py, st.py, and ip.py and must be installed as sudo for the scripts to work.
 4. ifconfig (`sudo apt install net-tools`). Used for df.sh to request information from interfaces.
 5. nmap (`sudo apt install nmap`). Used for bg.sh to scan some port services.
 
@@ -38,26 +38,15 @@ This collection of standalone scripts was written with the intent to gather data
 9. **Detect Mod_headers** (dm.py) - This script checks a remote server to see if it is an Apache Server. If so, a check is done for mod_headers. Apache mod_headers is a module for the Apache web server that allows you to modify HTTP request and response headers. This allows a network defender to obfuscate banners if wanted.
 10. **Detect Apache ServerSignature/ServerTokens** (da.py) - This script checks the remote server to see if it is an Apache server. If it is, it checks for the "ServerSignature" and "ServerTokens" headers/directives. The "ServerSignature" directive controls whether the server includes a footer line containing the server version number and other information in error messages and directory listings. The "ServerTokens" directive controls the level of detail in the server response headers. A network defender can raise the sensitivity higher than the default to reduce the attack surface. This script checks if the network defender did that.
 11. **Sniff for HTTP Tunneling** (st.py) - Must be run as sudo. This script looks for over a dozen different indicators of potential HTTP tunelling by running a check on each port 80 and 443 packet. Custom ports are also considered in the script.
+12. **Detect IP Spoofing** (ip.py) - Must be run as sudo. This script looks for potential IP spoofing by crafting, and sending, a SYN/ACK packet that advertizes a window size of 0. No communications are possible with a window size of 0, so if a suspicious IP responds to that SYN/ACK, it is a good indication that the IP is being spoofed. The window size on packets from A to B indicate how much buffer space is available on A for receiving packets. So when B receives a packet with window size 1, it would tell B how many bytes it is allowed to send to A before getting a response.
 
 ## Todo
-- [ ] detect outbound ssh traffic script (b)
-- [ ] simple custom vpn script (p/b)
-- [ ] IP spoofing detection script. See ../res/detecting ip spoofing and the other one
 - [ ] bogon detection script (b)
 - [ ] port 53, 445, 161-162, 389, 135, 137-139 enumeration script. make it quiet (p)
 - [ ] System Call Table explorer/detector for linux (b)
-- [ ] File metadata explorer (p/b)
+- [ ] File metadata explorer (b)
 - [ ] Hidden Form Items Finder for websites (p) 
 - [ ] tunnel check script: ack tunneling, icmp tunneling, ssh tunneling (b)
 - [ ] create a script that detects virtual routing/hosting (b)
 - [ ] create a menu item to run all scripts in main.py along with the option to do it for the same IP; another option to run internal scripts/external scripts
 - [ ] check the scripts that ask for ip/url exclusively and consider a check for the other name to check for virtual routing/hosting
-- [x] add an output folder check to scripts
-- [x] create a menu (main.py) for the application
-- [x] create a bash script that detects and toggles source routing
-- [x] create a script that tells if packets are being fragmented or not
-- [x] banner grabber for several ports at once
-- [x] script that detects IIS lockdown tool
-- [x] script that detects apache mod headers. This could detect false or off banners
-- [x] script that detects and apache2.conf serversignature/server token settings
-- [x] HTTP tunelling detection script
