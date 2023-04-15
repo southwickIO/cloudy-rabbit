@@ -3,3 +3,7 @@
 /res/output/sample.pcap
 /res/output/ipids.txt
 /res/output/hostcommand.csv
+/res/output/nmap.txt
+/res/output/enum4linux.txt
+/res/enum4linux.pl
+/res/share-list.txt

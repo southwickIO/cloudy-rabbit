@@ -3,20 +3,25 @@
 
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
-# NAME: bg.sh                                                                 #
+# NAME: ep.sh                                                                 #
 #                                                                             #
 # VERSION: 20230415                                                           #
 #                                                                             #
-# SYNOPSIS: Simple nmap wrapped banner grabber to be included with the suite  #
+# SYNOPSIS: Enumeration for ports 53, 445, 161-162, 389, 135, 137-139         #
 #                                                                             #
-# DESCRIPTION: This script collects banners using nmap for some of the more   #
-#              popular ports.                                                 #
+# DESCRIPTION: This script checks if ports 53, 445, 161-162, 389, 135,        #
+#              137-139 are open with nmap and then enum4linux performs simple #
+#              enumeration. This is meant to have Microsoft targets.          #
+#                                                                             #
 #                                                                             #
 # INPUT: Runtime user input                                                   #
 #                                                                             #
-# OUTPUT: STDOUT                                                              #
+# OUTPUT: 1.) STDOUT                                                          #
+#         2.) directory                                                       #
+#         3.) text file                                                       #
 #                                                                             #
-# PRE-RUNTIME NOTES: This script scans domains. Consider local laws.          #
+# PRE-RUNTIME NOTES: enum4linux.pl filepath must be correct for this script   # 
+#                    to work                                                  #
 #                                                                             #
 # AUTHORS: @southwickio                                                       #
 #                                                                             #
@@ -32,16 +37,40 @@
 
 
 
-#ask user for IP or URL input
+#get target
 echo
 echo
 echo
-read -p "Enter IP or URL: " target
+read -p "Enter the IP address or domain of the target host: " target
 
 
 
-#run nmap with -sV flag and ports 20-8080
+#create a temp directory to store results
+mkdir -p ../res/output
+
+
+
 echo
 echo
 echo
-nmap -sV -p20-9000 $target
+echo "Running preliminary nmap scan"
+#scan ports and save results
+nmap -Pn -p 53,445,161-162,389,135,137-139 -oN ../res/output/nmap.txt $target > /dev/null
+
+
+
+echo
+echo
+echo
+echo "Done. Running enum4linux.pl"
+#run enum4linux and save results
+perl ../res/enum4linux.pl -a -l -A $target > ../res/output/enum4linux.txt
+
+
+
+#stdout
+echo
+echo
+echo
+echo "Done. Enumeration complete. Results saved to ../res/output/nmap.txt and \
+../res/output/enum4linux.txt"

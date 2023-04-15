@@ -5,7 +5,7 @@
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 # NAME: main.py                                                               #
 #                                                                             #
-# VERSION: 20230411                                                           #
+# VERSION: 20230415                                                           #
 #                                                                             #
 # SYNOPSIS: Main menu for the cloudy-rabbit application                       #
 #                                                                             #
@@ -71,11 +71,12 @@ while True:
     print("11. Sniff for HTTP Tunneling (st.py)")
     print("12. Detect IP Spoofing (ip.py)")
     print("13. Detect Bogon Traffic (db.py)")
+    print("14. Enumerate Ports (ep.sh)")
 
 
 
     #ingress choice
-    choice = int(input("\nEnter your choice (1-13): "))
+    choice = int(input("\nEnter your choice (1-14): "))
 
 
 
@@ -101,12 +102,14 @@ while True:
 
 
     elif choice == 4:
+
         subprocess.run(["bash", "./ch.sh"])
         print("\n\n\n\n\n")
 
 
 
     elif choice == 5:
+
         subprocess.run(["bash", "./ds.sh"])
         print("\n\n\n\n\n")
 
@@ -128,24 +131,28 @@ while True:
 
 
     elif choice == 7:
+
         subprocess.run(["bash", "./bg.sh"])
         print("\n\n\n\n\n")
 
 
 
     elif choice == 8:
+
         subprocess.run(["python3", "./di.py"])
         print("\n\n\n\n\n")
 
 
 
     elif choice == 9:
+
         subprocess.run(["python3", "./dm.py"])
         print("\n\n\n\n\n")
 
 
 
     elif choice == 10:
+
         subprocess.run(["python3", "./da.py"])
         print("\n\n\n\n\n")
 
@@ -196,9 +203,15 @@ while True:
 
 
 
+    elif choice == 14:
+
+        subprocess.run(["bash", "./ep.sh"])
+        print("\n\n\n\n\n")
+
 
 
     else:
+
         print("\n\n\n\n\n")
 
 
