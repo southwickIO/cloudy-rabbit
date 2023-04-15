@@ -17,7 +17,7 @@ This collection of standalone scripts was written with the intent to gather data
 3. scapy (`sudo pip3 install scapy`). Used in several scripts and must be installed as sudo for those scripts to work.
 4. ifconfig (`sudo apt install net-tools`). Used in df.sh to request information from interfaces.
 5. nmap (`sudo apt install nmap`). Used in several scripts for port scanning.
-6 enum4linux (from https://github.com/CiscoCXSecurity/). Used in ep.sh to enumerate open ports that are passed to it.
+6. enum4linux (from https://github.com/CiscoCXSecurity/). Used in ep.sh to enumerate open ports that are passed to it.
 7. smbclient (`sudo apt install smbclient`) Used in enum4linux for enumeration.
 
 ## Installation and Runtime
