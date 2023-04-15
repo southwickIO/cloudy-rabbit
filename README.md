@@ -44,9 +44,9 @@ This collection of standalone scripts was written with the intent to gather data
 13. **Detect Bogon Traffic** (db.py) - Must be run as sudo. This script looks for bogon traffic coming in from the internet. This is a huge sign of spoofing or something malicious. Bogon networks are IP addresses or ranges of IP addresses that have not been allocated or assigned to any organization or user, and thus are not supposed to be used in the public internet. They are typically blocked by network administrators to prevent traffic from those networks from entering or leaving the network.
 14. **Enumerate Ports** (ep.sh) - This script checks if ports 53, 445, 161-162, 389, 135, 137-139 are open with nmap and then enum4linux performs simple enumeration. This is meant to have Microsoft targets.
 15. **System Call Detector** (cd.sh) - Must be run as sudo if you want to monitor a PID that isn't yours or a PID that is owned by root. This script performs syscall sniffing on the PID selected by the user.
+16. **Hidden Form Field Finder** (ff.py) - This script looks for hidden fields in forms from a user specified domain. Hidden form fields are used in HTML web forms to store data that should not be visible or edited by users, but is needed by the server to process the form submission. For example, a hidden form field may contain a session token, a user ID, or other data that the server uses to validate the user's identity or perform some other function. A network defender may want to keep track of hidden form fields to detect and prevent attacks that use these fields to manipulate or bypass the intended form submission process. Attackers may use hidden form fields to inject malicious code, change the value of a field, or bypass validation checks, among other things. By monitoring hidden form fields, defenders can detect these attacks and take appropriate actions to protect the system.
 
 ## Todo
-- [ ] Hidden Form Items Finder for websites (p) 
 - [ ] detect ack tunneling script (b)
 - [ ] detect icmp tunneling script (b)
 - [ ] create a script that detects virtual routing/hosting (b)

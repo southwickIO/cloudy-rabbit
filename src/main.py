@@ -73,11 +73,12 @@ while True:
     print("13. Detect Bogon Traffic (db.py)")
     print("14. Enumerate Ports (ep.sh)")
     print("15. System Call Detector (cd.sh)")
+    print("16. Hidden Form Field Finder (ff.py)")
 
 
 
     #ingress choice
-    choice = int(input("\nEnter your choice (1-15): "))
+    choice = int(input("\nEnter your choice (1-16): "))
 
 
 
@@ -222,6 +223,13 @@ while True:
 
             pass
         
+        print("\n\n\n\n\n")
+
+
+
+    elif choice == 16:
+
+        subprocess.run(["python3", "./ff.py"])
         print("\n\n\n\n\n")
 
 
