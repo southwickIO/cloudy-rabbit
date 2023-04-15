@@ -43,13 +43,12 @@ This collection of standalone scripts was written with the intent to gather data
 12. **Detect IP Spoofing** (ip.py) - Must be run as sudo. This script looks for potential IP spoofing by crafting, and sending, a SYN/ACK packet that advertizes a window size of 0. No communications are possible with a window size of 0, so if a suspicious IP responds to that SYN/ACK, it is a good indication that the IP is being spoofed. The window size on packets from A to B indicate how much buffer space is available on A for receiving packets. So when B receives a packet with window size 1, it would tell B how many bytes it is allowed to send to A before getting a response.
 13. **Detect Bogon Traffic** (db.py) - Must be run as sudo. This script looks for bogon traffic coming in from the internet. This is a huge sign of spoofing or something malicious. Bogon networks are IP addresses or ranges of IP addresses that have not been allocated or assigned to any organization or user, and thus are not supposed to be used in the public internet. They are typically blocked by network administrators to prevent traffic from those networks from entering or leaving the network.
 14. **Enumerate Ports** (ep.sh) - This script checks if ports 53, 445, 161-162, 389, 135, 137-139 are open with nmap and then enum4linux performs simple enumeration. This is meant to have Microsoft targets.
+15. **System Call Detector** (cd.sh) - Must be run as sudo if you want to monitor a PID that isn't yours or a PID that is owned by root. This script performs syscall sniffing on the PID selected by the user.
 
 ## Todo
-- [ ] System Call Table explorer/detector for linux (b)
-- [ ] File metadata explorer (b)
 - [ ] Hidden Form Items Finder for websites (p) 
-- [ ] detect ack tunneling script (p)
-- [ ] detect icmp tunneling script (p)
+- [ ] detect ack tunneling script (b)
+- [ ] detect icmp tunneling script (b)
 - [ ] create a script that detects virtual routing/hosting (b)
 
 - [ ] create a menu item to run all scripts in main.py along with the option to do it for the same IP; another option to run internal scripts/external scripts

@@ -72,11 +72,12 @@ while True:
     print("12. Detect IP Spoofing (ip.py)")
     print("13. Detect Bogon Traffic (db.py)")
     print("14. Enumerate Ports (ep.sh)")
+    print("15. System Call Detector (cd.sh)")
 
 
 
     #ingress choice
-    choice = int(input("\nEnter your choice (1-14): "))
+    choice = int(input("\nEnter your choice (1-15): "))
 
 
 
@@ -206,6 +207,21 @@ while True:
     elif choice == 14:
 
         subprocess.run(["bash", "./ep.sh"])
+        print("\n\n\n\n\n")
+
+
+
+    elif choice == 15:
+
+        #try clause for strace quit
+        try:
+
+            subprocess.run(["bash", "./cd.sh"])
+ 
+        except KeyboardInterrupt:
+
+            pass
+        
         print("\n\n\n\n\n")
 
 
