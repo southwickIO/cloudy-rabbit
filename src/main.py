@@ -74,11 +74,12 @@ while True:
     print("14. Enumerate Ports (ep.sh)")
     print("15. System Call Detector (cd.sh)")
     print("16. Hidden Form Field Finder (ff.py)")
+    print("17. Detect ACK Tunneling (dk.py)")
 
 
 
     #ingress choice
-    choice = int(input("\nEnter your choice (1-16): "))
+    choice = int(input("\nEnter your choice (1-17): "))
 
 
 
@@ -230,6 +231,21 @@ while True:
     elif choice == 16:
 
         subprocess.run(["python3", "./ff.py"])
+        print("\n\n\n\n\n")
+
+
+
+    elif choice == 17:
+
+        #try clause for rawsocket quit
+        try:
+
+            subprocess.run(["python3", "./dk.py"])
+ 
+        except KeyboardInterrupt:
+
+            pass
+        
         print("\n\n\n\n\n")
 
 
