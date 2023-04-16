@@ -26,6 +26,7 @@ This collection of standalone scripts was written with the intent to gather data
 2. `cd cloudy-rabbit/`
 3. `chmod -R u+x cloudy-rabbit/`
 4. Run any script with the prefix `./`. For example: `./fc.py` or `./gl.sh` or run the menu `sudo ./main.py`
+5. Most scripts, includeing `main.py` must be run with elevated privileges.
 
 ## Scripts
 0. **Menu** (main.py) - Must be run as sudo. This is the main script of the program.
@@ -45,10 +46,10 @@ This collection of standalone scripts was written with the intent to gather data
 14. **Enumerate Ports** (ep.sh) - This script checks if ports 53, 445, 161-162, 389, 135, 137-139 are open with nmap and then enum4linux performs simple enumeration. This is meant to have Microsoft targets.
 15. **System Call Detector** (cd.sh) - Must be run as sudo if you want to monitor a PID that isn't yours or a PID that is owned by root. This script performs syscall sniffing on the PID selected by the user.
 16. **Hidden Form Field Finder** (ff.py) - This script looks for hidden fields in forms from a user specified domain. Hidden form fields are used in HTML web forms to store data that should not be visible or edited by users, but is needed by the server to process the form submission. For example, a hidden form field may contain a session token, a user ID, or other data that the server uses to validate the user's identity or perform some other function. A network defender may want to keep track of hidden form fields to detect and prevent attacks that use these fields to manipulate or bypass the intended form submission process. Attackers may use hidden form fields to inject malicious code, change the value of a field, or bypass validation checks, among other things. By monitoring hidden form fields, defenders can detect these attacks and take appropriate actions to protect the system.
-17. **Detect ACK Tunneling** (dk.py) - This script looks for potential indicators of ACK tunelling. ACK tunneling is a technique used in network security to bypass firewalls and other network security devices that use stateful packet inspection. The technique involves encapsulating data within ACK packets, which are typically used to acknowledge the receipt of data packets.
+17. **Detect ACK Tunneling** (dk.py) - Must be run as sudo. This script looks for potential indicators of ACK tunelling. ACK tunneling is a technique used in network security to bypass firewalls and other network security devices that use stateful packet inspection. The technique involves encapsulating data within ACK packets, which are typically used to acknowledge the receipt of data packets.
+18. **Detect ICMP Tunneling** (dc.py) - Must be run as sudo. This script looks for potential indicators of ICMP tunelling. ICMP tunneling is a technique used to encapsulate arbitrary network traffic inside ICMP (Internet Control Message Protocol) packets, in order to bypass network security measures or to enable communication between networks where normal traffic is blocked. The idea behind ICMP tunneling is to use the ICMP protocol, which is typically used for error reporting and diagnostic purposes, to carry data packets between two endpoints. By encapsulating the data inside ICMP packets, the data can traverse networks that might otherwise block the type of traffic being carried. ICMP tunneling is often used by hackers to exfiltrate data or to establish covert communication channels. It can also be used by legitimate users to bypass network restrictions or to enable communication in situations where normal network traffic is blocked.
 
 ## Todo
-- [ ] detect icmp tunneling script (b)
 - [ ] create a script that detects virtual routing/hosting (b)
 
 - [ ] create a menu item to run all scripts in main.py along with the option to do it for the same IP; another option to run internal scripts/external scripts

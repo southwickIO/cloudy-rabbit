@@ -75,11 +75,12 @@ while True:
     print("15. System Call Detector (cd.sh)")
     print("16. Hidden Form Field Finder (ff.py)")
     print("17. Detect ACK Tunneling (dk.py)")
+    print("18. Detect ICMP Tunneling (dc.py) ")
 
 
 
     #ingress choice
-    choice = int(input("\nEnter your choice (1-17): "))
+    choice = int(input("\nEnter your choice (1-18): "))
 
 
 
@@ -241,6 +242,21 @@ while True:
         try:
 
             subprocess.run(["python3", "./dk.py"])
+ 
+        except KeyboardInterrupt:
+
+            pass
+        
+        print("\n\n\n\n\n")
+
+
+
+    elif choice == 18:
+
+        #try clause for scapy quit
+        try:
+
+            subprocess.run(["python3", "./dc.py"])
  
         except KeyboardInterrupt:
 
