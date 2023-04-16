@@ -76,11 +76,12 @@ while True:
     print("16. Hidden Form Field Finder (ff.py)")
     print("17. Detect ACK Tunneling (dk.py)")
     print("18. Detect ICMP Tunneling (dc.py) ")
+    print("19. Detect Virtual Hosting (dh.py)")
 
 
 
     #ingress choice
-    choice = int(input("\nEnter your choice (1-18): "))
+    choice = int(input("\nEnter your choice (1-19): "))
 
 
 
@@ -262,6 +263,13 @@ while True:
 
             pass
         
+        print("\n\n\n\n\n")
+
+
+
+    elif choice == 19:
+
+        subprocess.run(["python3", "./dh.py"])
         print("\n\n\n\n\n")
 
 
